@@ -1,0 +1,15 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.test2 {
+  color: $color-primary;
+  font-family: $text-titan-one;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 140px;
+  @include tablet{
+    margin-top: 0;
+    font-size: 20px;
+  }
+}

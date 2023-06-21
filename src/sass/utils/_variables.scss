@@ -1,0 +1,53 @@
+// colors, text, fill, border
+$color-primary: #fff; //text
+$color-secondary: #000; // text
+$color-tertiary: #d41443; //title, text
+$color-quaternary: #ffa5ba; //subtitle, hours
+$color-quinary: #907e82; //description
+$color-senary: #e1e1e1;
+$color-septenary: #907e82;
+$color-octonary: #d9d9d9;
+
+//colors rgba
+$rgba-color-primary: rgba(224, 10, 31, 0.1);
+$rgba-color-secondary: rgba(33, 33, 33, 0.2);
+$rgba-color-tertiary: rgba(255, 255, 255, 0.7);
+$rgba-color-quaternary: rgba(255, 255, 255, 0.5);
+$rgba-color-quinary: rgba(255, 255, 255, 1);
+
+//Backgroup
+$background-color-primary: #ffb8ca; //section-one
+$background-color-secondary: #fff; //section-two
+$background-color-tertiary: #fff5f6; //section-tree
+$background-color-quaternary: #fafafa; //coment
+$background-color-quinary: #f0d1a5; //card-two
+$background-color-senary: #c2e297; //card-one
+$background-color-septenary: #d41443; //buton
+
+//Backgroup rgba
+$background-color-rgba-primary: rgba(255, 184, 202, 1);
+$background-color-rgba-secondary: rgba(225, 121, 146, 1);
+$background-color-rgba-tertiary: rgb(238, 229, 229);
+$background-color-rgba-quaternary: rgba(0, 0, 0, 0.2);
+$background-color-rgba-quinary: rgba(212, 19, 66, 1);
+$background-color-rgba-senary:  rgba(117, 117, 117, 0.5);
+
+//box-shadow
+$box-shadow-primary: 0px 8px 30px rgba(212, 20, 67, 0.1);
+$box-shadow-secondary: 2px 2px 3px rgba(0, 0, 0, 0.25);
+ $box-shadow-tertiary: 0px 4px 4px rgba(0, 0, 0, 0.25) ;
+ $box-shadow-quaternary: 0px 1px 3px rgba(0, 0, 0, 0.12) ;
+ $box-shadow-quinary:0px 1px 1px rgba(0, 0, 0, 0.14)  ;
+ $box-shadow-senary: 0px 2px 1px rgba(0, 0, 0, 0.2) ;
+ $box-shadow-septenary: 0px 8px 30px rgba(144, 35, 62, 0.632);
+ $box-shadow-octonary: 0px 8px 30px rgba(212, 20, 67, 0.1);
+
+//others
+$color-border-primary-: #e1e1e1; //copyright box
+
+//Text
+$text-dm-sans: 'DM Sans', 'sans-serif'; // example
+$text-titan-one: 'Titan One', 'sans-serif'; // example
+// Definir las variables para el tamaño original y el tamaño con zoom
+$original-size: 100%;
+$zoom-size: 120%;
