@@ -4,12 +4,23 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
+  &__box {
+    margin-right: 53px;
+  }
   &__card {
     width: 267px;
     height: 300px;
-    margin-right: 53px;
-    margin-top: 60px;
+    position: absolute;
+    z-index: 2;
+  }
+  &__border {
+    position: relative;
+    width: 227px;
+    height: 213px;
+    border-radius: 50px 0px;
+    border: 1px solid rgba(220, 86, 197, 0.3);
+    transform: translate(61px, -26px);
+    z-index: 1;
   }
   &__image {
     width: 267px;
@@ -36,5 +47,10 @@
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    &::before {
+      content: url('../images/Vector.svg');
+      display: inline-block;
+      margin-right: 5px;
+    }
   }
 }
