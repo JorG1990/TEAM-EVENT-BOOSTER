@@ -1,30 +1,26 @@
+index.js;
 // En el archivo index.js
 
+// Importar las variables de configuración desde el archivo "./config"
 import { API_URL, API_KEY } from './js/config';
 
-// Petición de eventos con paginación
-export function fetchEvents(page, pageSize) {
-  const offset = (page - 1) * pageSize; // Cálculo del offset para la paginación
+// Petición de eventos
+export function fetchEvents(pageSize, pageNumber) {
+  const queryParams = new URLSearchParams({
+    apikey: API_KEY,
+    locale: '*',
+    includeImages: 'yes',
+    size: pageSize,
+    page: pageNumber,
+  });
 
-  return fetch(
-    `https://${API_URL}?apikey=${API_KEY}&` +
-      new URLSearchParams({
-        locale: '*',
-        includeImages: 'yes',
-        page: page,
-        size: pageSize,
-        offset: offset,
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-      })
-  )
+  return fetch(`https://${API_URL}?${queryParams}`)
     .then(response => response.json())
     .then(data => {
       const events = data._embedded.events;
       const formattedEvents = formatEvents(events);
-      return formattedEvents;
+      const totalPages = Math.ceil(data.page.totalElements / pageSize);
+      return { events: formattedEvents, totalPages };
     })
     .catch(error => {
       console.log(error);
