@@ -1,3 +1,5 @@
+@import '../utils/variables';
+@import '../utils/mixins';
 .backdrop {
   background-color: $background-color-primary;
   width: 100%;

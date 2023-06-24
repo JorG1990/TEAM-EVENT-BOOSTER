@@ -1,8 +1,3 @@
-@import './common';
-@import './header';
-@import './gallery';
-@import './footer';
-@import './modal';
 /*  .☻/
     /▌ . H e l l o . . . Estilos Base SCSS
     / \
@@ -12,6 +7,8 @@
 @import 'base/global';
 @import 'components/header';
 @import 'components/footer';
+@import 'components/gallery';
+@import 'components/modal';
 @import 'layout/container';
 @import 'layout/section';
 
