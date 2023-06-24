@@ -12,13 +12,14 @@
     height: 300px;
     position: absolute;
     z-index: 2;
+    cursor: pointer;
   }
   &__border {
     position: relative;
     width: 227px;
     height: 213px;
     border-radius: 50px 0px;
-    border: 1px solid rgba(220, 86, 197, 0.3);
+    border: 1px solid $rgba-color-primary;
     transform: translate(61px, -26px);
     z-index: 1;
   }
@@ -29,23 +30,23 @@
     border-radius: 50px 0px;
   }
   &__title {
-    color: #dc56c5;
+    color: $color-tertiary;
     text-align: center;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
     font-weight: 700;
   }
   &__date {
-    color: #fff;
+    color: $color-primary;
     text-align: center;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
   }
   &__place {
-    color: #fff;
+    color: $color-primary;
     text-align: center;
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
     font-weight: 600;
     &::before {
       content: url('../images/Vector.svg');
