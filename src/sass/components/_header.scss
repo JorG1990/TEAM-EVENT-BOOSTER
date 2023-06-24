@@ -1,23 +1,5 @@
 @import '../utils/variables';
 @import '../utils/mixins';
-
-.test2 {
-  margin: 0;
-  display: flex;
-  flex-basis: calc(100% - 32px/3);
-  @include mobile {
-    flex-direction: column;
-  }
-  @include desktop {
-    gap: 30px;
-  }
-  @include tablet{
-    display: flex;
-    flex-basis: calc(100% - 32px/3);
-    gap: 30px;
-  }
-}
-
 .header {
   background-image: url(../images/pic.png);
   background-repeat: no-repeat;
@@ -25,8 +7,8 @@
   background-size: cover;
   height: 448px;
   &__title {
-    color: #dc56c5;
-    font-family: 'Montserrat', sans-serif;
+    color: $color-tertiary;
+    font-family: $montserrat;
     text-align: center;
     font-weight: 900;
     position: relative;
@@ -35,7 +17,7 @@
     font-size: 50;
   }
   &__inputs {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
     font-size: 16;
     font-weight: 400;
     display: flex;
@@ -45,9 +27,9 @@
       width: 288px;
       height: 40px;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.2);
+      background: $rgba-color-secondary;
       backdrop-filter: blur(10px);
-      color: #939393;
+      color: $color-quinary;
       padding-left: 32px;
       border: solid;
     }
@@ -56,15 +38,14 @@
       width: 288px;
       height: 40px;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.2);
+      background: $rgba-color-secondary;
       backdrop-filter: blur(10px);
-      color: #939393;
+      color: $color-quinary;
       padding-left: 32px;
       border: solid;
     }
   }
 }
-
 .logo {
   position: absolute;
 }

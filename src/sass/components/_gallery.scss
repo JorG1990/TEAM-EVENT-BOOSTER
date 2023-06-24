@@ -1,18 +1,29 @@
 @import '../utils/variables';
 @import '../utils/mixins';
-
 .gallery {
   width: 100%;
   height: 800px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
+  &__box {
+    margin-right: 53px;
+  }
   &__card {
     width: 267px;
     height: 300px;
-    margin-right: 53px;
-    margin-top: 60px;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+  }
+  &__border {
+    position: relative;
+    width: 227px;
+    height: 213px;
+    border-radius: 50px 0px;
+    border: 1px solid $rgba-color-primary;
+    transform: translate(61px, -26px);
+    z-index: 1;
   }
   &__image {
     width: 267px;
@@ -21,23 +32,28 @@
     border-radius: 50px 0px;
   }
   &__title {
-    color: #dc56c5;
+    color: $color-tertiary;
     text-align: center;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
     font-weight: 700;
   }
   &__date {
-    color: #fff;
+    color: $color-primary;
     text-align: center;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
   }
   &__place {
-    color: #fff;
+    color: $color-primary;
     text-align: center;
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
     font-weight: 600;
+    &::before {
+      content: url('../images/Vector.svg');
+      display: inline-block;
+      margin-right: 5px;
+    }
   }
 }

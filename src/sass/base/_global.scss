@@ -1,7 +1,6 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 @import '../utils/variables';
 @import '../utils/mixins';
-
 body {
-  background-color: black;
+  background-color: $color-secondary;
 }
