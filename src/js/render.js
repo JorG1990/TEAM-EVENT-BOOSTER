@@ -1,4 +1,3 @@
-//este es el archivo render.js
 //archivo render.js
 // Importar la función fetchEvents desde el archivo index.js
 import { fetchEvents } from '../index';
