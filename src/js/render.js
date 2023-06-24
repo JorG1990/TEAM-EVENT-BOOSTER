@@ -1,5 +1,5 @@
-// En el archivo render.js
-
+//este es el archivo render.js
+//archivo render.js
 // Importar la función fetchEvents desde el archivo index.js
 import { fetchEvents } from '../index';
 
@@ -11,7 +11,7 @@ const gallery = document.querySelector('.gallery');
 const paginationSection = document.querySelector('.pagination');
 
 // Configuración de paginación
-const pageSize = 28;
+const pageSize = 100;
 let currentPage = 1;
 let totalPages = 1;
 
@@ -66,9 +66,15 @@ function handlePaginationClick(page) {
   }
 
   if (page === 'prev') {
-    currentPage--;
+    currentPage -= 1;
+    if (currentPage < 1) {
+      currentPage = 1;
+    }
   } else if (page === 'next') {
-    currentPage++;
+    currentPage += 1;
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
   } else {
     currentPage = page;
   }
@@ -113,6 +119,8 @@ function renderPagination(totalPages, currentPage) {
   // Agregar botón de página anterior
   if (currentPage > 1) {
     const prevButton = createPaginationButton('Prev', 'prev');
+    const prev10Button = createPaginationButton('Prev 10', currentPage - 10);
+    paginationSection.appendChild(prev10Button);
     paginationSection.appendChild(prevButton);
   }
 
@@ -128,7 +136,9 @@ function renderPagination(totalPages, currentPage) {
   // Agregar botón de página siguiente
   if (currentPage < totalPages) {
     const nextButton = createPaginationButton('Next', 'next');
+    const next10Button = createPaginationButton('Next 10', currentPage + 10);
     paginationSection.appendChild(nextButton);
+    paginationSection.appendChild(next10Button);
   }
 }
 

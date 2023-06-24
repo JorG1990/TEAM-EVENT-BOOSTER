@@ -1,5 +1,5 @@
-index.js;
-// En el archivo index.js
+// Este es el archivo index.js
+// Este es el archivo index.js
 
 // Importar las variables de configuración desde el archivo "./config"
 import { API_URL, API_KEY } from './js/config';

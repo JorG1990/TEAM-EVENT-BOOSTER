@@ -21,8 +21,11 @@
     "axios": "^1.4.0",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
+    "paginationjs": "^2.6.0",
+    "react-paginate": "^8.2.0",
     "simplelightbox": "^2.14.1",
-    "slim-select": "^2.5.1"
+    "slim-select": "^2.5.1",
+    "vuejs-paginate": "^2.1.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
