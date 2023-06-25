@@ -1,3 +1,5 @@
+//modal.js
+
 // Definir referencias a los elementos del modal
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),

@@ -1,3 +1,5 @@
+// renderPagination.js
+
 // Importar la función fetchEvents y la función renderEvents desde el archivo index.js
 import { fetchEvents } from '../index';
 import { renderEvents } from './renderEvents';
@@ -50,6 +52,16 @@ export function renderPagination(totalPages, currentPage) {
     startPage = Math.max(1, endPage - visiblePages + 1);
   }
 
+  // Añadir botón para avanzar una página de uno en uno
+  const prevButton = createPaginationButton('<', currentPage - 1);
+  paginationSection.appendChild(prevButton);
+
+  // Añadir botones para avanzar de 10 en 10
+  if (startPage > 1) {
+    const jumpBackButton = createPaginationButton('<<', currentPage - 10);
+    paginationSection.appendChild(jumpBackButton);
+  }
+
   for (let i = startPage; i <= endPage; i++) {
     const pageButton = createPaginationButton(i, i);
     if (i === currentPage) {
@@ -57,4 +69,14 @@ export function renderPagination(totalPages, currentPage) {
     }
     paginationSection.appendChild(pageButton);
   }
+
+  // Añadir botones para avanzar de 10 en 10
+  if (endPage < totalPages) {
+    const jumpForwardButton = createPaginationButton('>>', currentPage + 10);
+    paginationSection.appendChild(jumpForwardButton);
+  }
+
+  // Añadir botón para avanzar una página de uno en uno
+  const nextButton = createPaginationButton('>', currentPage + 1);
+  paginationSection.appendChild(nextButton);
 }
