@@ -1,7 +1,5 @@
 // Importar las variables de configuración desde el archivo "./config"
 import { API_URL, API_KEY } from './js/config';
-import { renderEvents } from './js/renderEvents';
-import { renderPagination } from './js/renderPagination';
 
 // Petición de eventos
 export function fetchEvents(pageSize, pageNumber) {

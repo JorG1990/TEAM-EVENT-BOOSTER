@@ -1,6 +1,12 @@
 // Obtener referencia a la galería
 const gallery = document.querySelector('.gallery');
 
+// Función para abrir el modal al hacer clic en una tarjeta
+function openModalOnCardClick(card) {
+  const modal = document.querySelector('[data-modal]');
+  modal.classList.toggle('is-hidden');
+}
+
 // Función para renderizar los eventos en el HTML
 export function renderEvents(events) {
   // Limpiar el contenido actual de la galería
@@ -14,11 +20,14 @@ export function renderEvents(events) {
     card.classList.add('gallery__card');
     card.setAttribute('data-modal-open', ''); // Agregar atributo para abrir el modal al hacer clic
 
+    // Agregar evento de clic a la tarjeta para abrir el modal
+    card.addEventListener('click', () => openModalOnCardClick(card));
+
     const image = document.createElement('img');
     image.classList.add('gallery__image');
     image.src = event.image;
-    image.width = '267px';
-    image.height = '220px';
+    image.width = 0;
+    image.height = 0;
 
     const title = document.createElement('h2');
     title.classList.add('gallery__title');
@@ -31,12 +40,6 @@ export function renderEvents(events) {
     const place = document.createElement('p');
     place.classList.add('gallery__place');
     place.textContent = event.place;
-
-    // Agregar evento de clic para abrir el modal
-    card.addEventListener('click', () => {
-      const modal = document.querySelector('[data-modal]');
-      modal.classList.toggle('is-hidden');
-    });
 
     card.appendChild(image);
     card.appendChild(title);
