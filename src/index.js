@@ -49,3 +49,7 @@ function formatEvents(events) {
     };
   });
 }
+
+import { toggleModal } from './js/modal';
+
+toggleModal();

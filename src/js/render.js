@@ -22,8 +22,12 @@ function renderEvents(events) {
   // Recorrer los eventos y generar el HTML para cada uno
   events.forEach(event => {
     // Crear los elementos HTML necesarios para mostrar el evento
+
+    // const cardBox = document.createElement('div');
+    // cardBox.classList.add('gallery__box');
     const card = document.createElement('div');
     card.classList.add('gallery__card');
+    card.setAttribute('data-modal-open', ''); // Agregar el atributo data-modal-open
 
     const image = document.createElement('img');
     image.classList.add('gallery__image');
