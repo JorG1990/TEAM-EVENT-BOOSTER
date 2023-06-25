@@ -1,4 +1,3 @@
-// Este es el archivo index.js
 // Importar las variables de configuración desde el archivo "./config"
 import { API_URL, API_KEY } from './js/config';
 
@@ -15,10 +14,9 @@ export function fetchEvents(pageSize, pageNumber) {
   return fetch(`https://${API_URL}?${queryParams}`)
     .then(response => response.json())
     .then(data => {
-      const events = data._embedded.events;
-      const formattedEvents = formatEvents(events);
+      const events = formatEvents(data._embedded.events); // Formatear los eventos
       const totalPages = Math.ceil(data.page.totalElements / pageSize);
-      return { events: formattedEvents, totalPages };
+      return { events, totalPages };
     })
     .catch(error => {
       console.log(error);
@@ -27,7 +25,7 @@ export function fetchEvents(pageSize, pageNumber) {
 }
 
 // Función para formatear los eventos y extraer la información necesaria
-function formatEvents(events) {
+export function formatEvents(events) {
   return events.map(event => {
     const defaultImageUrl = 'https://via.placeholder.com/150'; // URL de imagen por defecto
     let imageUrl = defaultImageUrl;
@@ -36,7 +34,7 @@ function formatEvents(events) {
       for (let image of event.images) {
         if (image.url) {
           imageUrl = image.url;
-          break; // Escapar del bucle una vez que se encuentre una imagen con URL válida
+          break; // Escapar del bucle una vez que se encuentre una URL de imagen válida
         }
       }
     }
@@ -49,7 +47,3 @@ function formatEvents(events) {
     };
   });
 }
-
-import { toggleModal } from './js/modal';
-
-toggleModal();
