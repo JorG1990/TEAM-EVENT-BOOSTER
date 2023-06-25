@@ -21,17 +21,17 @@ function renderEvents(events) {
 
   // Recorrer los eventos y generar el HTML para cada uno
   events.forEach(event => {
-    // Crear los elementos HTML necesarios para mostrar el evento
-
-    // const cardBox = document.createElement('div');
-    // cardBox.classList.add('gallery__box');
+    const cardBox = document.createElement('div');
+    cardBox.classList.add('gallery__box');
     const card = document.createElement('div');
     card.classList.add('gallery__card');
-    card.setAttribute('data-modal-open', ''); // Agregar el atributo data-modal-open
+    card.setAttribute('data-modal-open', '');
 
     const image = document.createElement('img');
     image.classList.add('gallery__image');
     image.src = event.image;
+    image.width = '267px';
+    image.height = '220px';
 
     const title = document.createElement('h2');
     title.classList.add('gallery__title');
@@ -45,12 +45,12 @@ function renderEvents(events) {
     place.classList.add('gallery__place');
     place.textContent = event.place;
 
-    // Agregar los elementos al card y a la galería
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(date);
     card.appendChild(place);
-    gallery.appendChild(card);
+    cardBox.appendChild(card);
+    gallery.appendChild(cardBox);
   });
 }
 
@@ -65,7 +65,7 @@ function createPaginationButton(label, page) {
 // Función para manejar el clic en un botón de paginación
 function handlePaginationClick(page) {
   if (page === currentPage) {
-    return; // No hacer nada si se hace clic en la página actual
+    return;
   }
 
   if (page === 'prev') {
@@ -89,7 +89,6 @@ function handlePaginationClick(page) {
     })
     .catch(error => {
       console.log(error);
-      // Manejar el error en caso de que ocurra
     });
 }
 
@@ -97,29 +96,23 @@ function handlePaginationClick(page) {
 function renderPagination(totalPages, currentPage) {
   paginationSection.innerHTML = '';
 
-  // Calcular el rango de páginas a mostrar
   let startPage, endPage;
   if (totalPages <= 10) {
-    // Mostrar todas las páginas si hay menos de 10
     startPage = 1;
     endPage = totalPages;
   } else {
     if (currentPage <= 6) {
-      // Mostrar las primeras 10 páginas si la página actual está cerca del inicio
       startPage = 1;
       endPage = 10;
     } else if (currentPage + 4 >= totalPages) {
-      // Mostrar las últimas 10 páginas si la página actual está cerca del final
       startPage = totalPages - 9;
       endPage = totalPages;
     } else {
-      // Mostrar 10 páginas alrededor de la página actual
       startPage = currentPage - 5;
       endPage = currentPage + 4;
     }
   }
 
-  // Agregar botón de página anterior
   if (currentPage > 1) {
     const prevButton = createPaginationButton('Prev', 'prev');
     const prev10Button = createPaginationButton('Prev 10', currentPage - 10);
@@ -127,7 +120,6 @@ function renderPagination(totalPages, currentPage) {
     paginationSection.appendChild(prevButton);
   }
 
-  // Agregar botones de páginas
   for (let i = startPage; i <= endPage; i++) {
     const pageButton = createPaginationButton(i, i);
     if (i === currentPage) {
@@ -136,7 +128,6 @@ function renderPagination(totalPages, currentPage) {
     paginationSection.appendChild(pageButton);
   }
 
-  // Agregar botón de página siguiente
   if (currentPage < totalPages) {
     const nextButton = createPaginationButton('Next', 'next');
     const next10Button = createPaginationButton('Next 10', currentPage + 10);
@@ -154,5 +145,4 @@ fetchEvents(pageSize, currentPage)
   })
   .catch(error => {
     console.log(error);
-    // Manejar el error en caso de que ocurra
   });
