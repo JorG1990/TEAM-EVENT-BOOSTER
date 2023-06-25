@@ -1,6 +1,6 @@
 //renderEvents.js -- Obtener referencia a la galería y al modal
 const gallery = document.querySelector('.gallery');
-const modalBox = document.querySelector('.gallery__box__modal');
+const modalBox = document.querySelector('.gallery__modal__box');
 
 // Función para abrir el modal al hacer clic en una tarjeta
 function openModalOnCardClick(card) {
@@ -17,29 +17,32 @@ function openModalOnCardClick(card) {
   modalBox.innerHTML = '';
 
   // Crear elementos HTML para mostrar la información en el modal
+  const cardModal = document.createElement('div');
+  cardModal.classList.add('gallery__modal__card');
   const modalImage = document.createElement('img');
-  modalImage.classList.add('gallery__image');
+  modalImage.classList.add('gallery__modal__image');
   modalImage.src = imageSrc;
   modalImage.width = 0;
   modalImage.height = 0;
 
   const modalTitle = document.createElement('h2');
-  modalTitle.classList.add('gallery__title');
+  modalTitle.classList.add('gallery__modal__title');
   modalTitle.textContent = titleText;
 
   const modalDate = document.createElement('p');
-  modalDate.classList.add('gallery__date');
+  modalDate.classList.add('gallery__modal__date');
   modalDate.textContent = dateText;
 
   const modalPlace = document.createElement('p');
-  modalPlace.classList.add('gallery__place');
+  modalPlace.classList.add('gallery__modal__place');
   modalPlace.textContent = placeText;
 
   // Agregar los elementos al modal
+  modalBox.appendChild(cardModal);
   modalBox.appendChild(modalImage);
-  modalBox.appendChild(modalTitle);
-  modalBox.appendChild(modalDate);
-  modalBox.appendChild(modalPlace);
+  cardModal.appendChild(modalTitle);
+  cardModal.appendChild(modalDate);
+  cardModal.appendChild(modalPlace);
 }
 
 // Función para renderizar los eventos en el HTML

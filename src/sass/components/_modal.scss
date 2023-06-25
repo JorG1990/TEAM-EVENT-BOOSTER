@@ -25,9 +25,13 @@
   width: 1034px;
   height: 918px;
   z-index: 20;
-  display: flex;
-  justify-content: end;
-  align-items: start;
+  display: block;
+  // justify-content: end;
+  // align-items: start;
+  &__container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 }
 
 .close {
@@ -36,4 +40,53 @@
   background-color: $background-color-tertiary;
   margin: 32px;
   border: $background-color-tertiary;
+}
+
+.gallery__modal {
+  &__box {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5px;
+    background-color: burlywood; //test
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  &__card {
+    padding: 40px;
+    margin: 40px;
+  }
+  &__image {
+    width: 267px;
+    height: 220px;
+    flex-shrink: 0;
+    border-radius: 50px 0px;
+  }
+  &__title {
+    color: $color-tertiary;
+    text-align: center;
+    font-size: 16px;
+    font-family: $montserrat;
+    font-weight: 700;
+  }
+  &__date {
+    color: $color-secondary;
+    text-align: center;
+    font-size: 16px;
+    font-family: $montserrat;
+  }
+  &__place {
+    color: $color-secondary;
+    text-align: center;
+    font-size: 14px;
+    font-family: $montserrat;
+    font-weight: 600;
+    &::before {
+      content: url('../images/Vector.svg');
+      display: inline-block;
+      margin-right: 5px;
+      
+    }
+  }
 }
