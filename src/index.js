@@ -1,4 +1,4 @@
-// Importar las variables de configuración desde el archivo "./config"
+//index.js -- Importar las variables de configuración desde el archivo "./config"
 import { API_URL, API_KEY } from './js/config';
 
 // Petición de eventos
