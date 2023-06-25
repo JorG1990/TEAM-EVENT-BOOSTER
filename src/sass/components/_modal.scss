@@ -1,5 +1,6 @@
 @import '../utils/variables';
 @import '../utils/mixins';
+
 .backdrop {
   background-color: $background-color-primary;
   width: 100%;
@@ -10,12 +11,14 @@
   align-items: center;
   position: fixed;
 }
+
 .is-hidden {
   visibility: hidden;
   opacity: 1;
   pointer-events: all;
   display: none;
 }
+
 .modal {
   border-radius: 300px 0px;
   background-color: $background-color-tertiary;
@@ -26,6 +29,7 @@
   justify-content: end;
   align-items: start;
 }
+
 .close {
   width: 25px;
   height: 25px;
