@@ -1,5 +1,3 @@
-// renderEvents.js
-
 // Obtener referencia a la galería
 const gallery = document.querySelector('.gallery');
 
@@ -33,6 +31,12 @@ export function renderEvents(events) {
     const place = document.createElement('p');
     place.classList.add('gallery__place');
     place.textContent = event.place;
+
+    // Agregar evento de clic para abrir el modal
+    card.addEventListener('click', () => {
+      const modal = document.querySelector('[data-modal]');
+      modal.classList.toggle('is-hidden');
+    });
 
     card.appendChild(image);
     card.appendChild(title);

@@ -1,5 +1,3 @@
-// renderPagination.js
-
 // Importar la función fetchEvents y la función renderEvents desde el archivo index.js
 import { fetchEvents } from '../index';
 import { renderEvents } from './renderEvents';
