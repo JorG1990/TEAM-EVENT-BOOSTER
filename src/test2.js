@@ -16,3 +16,8 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 //     <p class="gallery__place">Palace of Ukraine</p>
 //   </div>
 // </section> -->
+
+
+import { toggleModal } from './js/modal';
+
+toggleModal();
