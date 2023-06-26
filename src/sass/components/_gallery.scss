@@ -86,3 +86,31 @@
     }
   }
 }
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .gallery {
+    &__card {
+      width: 150px;
+      height: 120px;
+    }
+    &__border {
+      width: 120px;
+      height: 112px;
+      transform: translate(40px, -20px);
+    }
+    &__image {
+      width: 141px;
+      height: 120px;
+    }
+    &__title {
+      font-size: 16px;
+      width: 152px;
+    }
+    &__date {
+      font-size: 16px;
+      width: 152px;
+    }
+    &__place {
+      font-size: 14px;
+    }
+  }
+}
