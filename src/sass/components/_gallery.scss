@@ -3,27 +3,26 @@
 
 .gallery {
   width: 100%;
-  height: 800px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   &__box {
-    margin-right: 53px;
+    margin-bottom: 200px;
+    margin-right: 35px;
+    margin-left: 35px;
   }
   &__card {
     width: 267px;
-    height: 300px;
-    // position: absolute; queda uno encima de otra
+    height: 370px;
+    position: absolute;
     z-index: 2;
-    cursor: pointer;
-    margin-bottom: 10px;
   }
   &__border {
     position: relative;
     width: 227px;
     height: 213px;
     border-radius: 50px 0px;
-    border: 1px solid $rgba-color-primary;
+    border: 1px solid $rgba-color-tertiary;
     transform: translate(61px, -26px);
     z-index: 1;
   }
@@ -58,4 +57,67 @@
       margin-right: 5px;
     }
   }
+}
+@media screen and (max-width: 480px) {
+  .gallery {
+    &__card {
+      width: 100px;
+      height: 120px;
+    }
+    &__border {
+      width: 102px;
+      height: 95px;
+      transform: translate(40px, -20px);
+    }
+    &__image {
+      width: 120px;
+      height: 120px;
+    }
+    &__title {
+      font-size: 14px;
+      width: 130px;
+    }
+    &__date {
+      font-size: 14px;
+      width: 130px;
+    }
+    &__place {
+      font-size: 12px;
+    }
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .gallery {
+    &__card {
+      width: 150px;
+      height: 120px;
+    }
+    &__border {
+      width: 120px;
+      height: 112px;
+      transform: translate(40px, -20px);
+    }
+    &__image {
+      width: 141px;
+      height: 120px;
+    }
+    &__title {
+      font-size: 16px;
+      width: 152px;
+    }
+    &__date {
+      font-size: 16px;
+      width: 152px;
+    }
+    &__place {
+      font-size: 14px;
+    }
+  }
+}
+.gallery__image:hover {
+  box-shadow: 0 0 4px $color-primary, 0 0 11px $color-primary,
+    0 0 19px $color-primary, 0 0 40px $color-quaternary,
+    0 0 80px $color-quaternary, 0 0 90px $color-quaternary,
+    0 0 100px $color-quaternary, 0 0 150px $color-quaternary;
+  transition: box-shadow 0.3s ease-in-out;
 }

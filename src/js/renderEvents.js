@@ -79,11 +79,15 @@ export function renderEvents(events) {
     place.classList.add('gallery__place');
     place.textContent = event.place;
 
+    const border = document.createElement('div');
+    border.classList.add('gallery__border');
+
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(date);
     card.appendChild(place);
     cardBox.appendChild(card);
     gallery.appendChild(cardBox);
+    cardBox.appendChild(border);
   });
 }

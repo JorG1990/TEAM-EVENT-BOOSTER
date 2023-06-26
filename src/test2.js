@@ -3,8 +3,6 @@ import Notiflix from 'notiflix'; // Importa la biblioteca Notiflix desde npm
 import SimpleLightbox from 'simplelightbox'; // Importa la biblioteca SimpleLightbox desde npm
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-
-
 // <!-- <section class="gallery">
 //   <div class="gallery__card">
 //     <img
@@ -16,7 +14,6 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 //     <p class="gallery__place">Palace of Ukraine</p>
 //   </div>
 // </section> -->
-
 
 import { toggleModal } from './js/modal';
 
