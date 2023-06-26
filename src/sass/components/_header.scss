@@ -1,22 +1,21 @@
 @import '../utils/variables';
 @import '../utils/mixins';
-
-/* .test2 {
+.test2 {
   margin: 0;
   display: flex;
-  flex-basis: calc(100% - 32px/3);
+  flex-basis: calc(100% - 32px / 3);
   @include mobile {
     flex-direction: column;
   }
   @include desktop {
     gap: 30px;
   }
-  @include tablet{
+  @include tablet {
     display: flex;
-    flex-basis: calc(100% - 32px/3);
+    flex-basis: calc(100% - 32px / 3);
     gap: 30px;
-  } 
-}*/
+  }
+}
 
 .header {
   background-image: url(../images/pic.png);
@@ -32,7 +31,7 @@
     position: relative;
     margin-top: 0;
     padding-top: 40px;
-    font-size: 50;
+    font-size: 50px;
     text-shadow: 0 0 5px $color-tertiary, 0 0 15px $color-tertiary,
       0 0 30px $color-tertiary, 0 0 50px $color-tertiary;
   }
@@ -68,4 +67,27 @@
 }
 .logo {
   position: absolute;
+  width: 250px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 300px;
+    &__title {
+      margin-top: 0;
+      padding-top: 80px;
+      font-size: 20px;
+    }
+    &__inputs {
+      font-size: 16;
+      font-weight: 400;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+  }
+  .logo {
+    width: 100px;
+    margin: 10px;
+  }
 }

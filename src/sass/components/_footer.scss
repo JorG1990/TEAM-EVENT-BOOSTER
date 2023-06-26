@@ -1,7 +1,7 @@
 @import '../utils/variables';
 @import '../utils/mixins';
 
-/* .test {
+.test {
   margin: 0;
   display: flex;
   flex-basis: calc(100% - 32px / 3);
@@ -16,7 +16,7 @@
     flex-basis: calc(100% - 32px / 3);
     gap: 30px;
   }
-} */
+}
 
 footer {
   color: $color-quinary;

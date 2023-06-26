@@ -4,10 +4,12 @@
 .gallery {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   &__box {
-    margin: 100px 45px;
+    margin-bottom: 200px;
+    margin-right: 35px;
+    margin-left: 35px;
   }
   &__card {
     width: 267px;
@@ -20,7 +22,7 @@
     width: 227px;
     height: 213px;
     border-radius: 50px 0px;
-    border: 1px solid rgba(220, 86, 197, 0.3);
+    border: 1px solid $rgba-color-tertiary;
     transform: translate(61px, -26px);
     z-index: 1;
   }
@@ -31,28 +33,56 @@
     border-radius: 50px 0px;
   }
   &__title {
-    color: #dc56c5;
+    color: $color-tertiary;
     text-align: center;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
     font-weight: 700;
   }
   &__date {
-    color: #fff;
+    color: $color-primary;
     text-align: center;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
   }
   &__place {
-    color: #fff;
+    color: $color-primary;
     text-align: center;
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
     font-weight: 600;
     &::before {
       content: url('../images/Vector.svg');
       display: inline-block;
       margin-right: 5px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .gallery {
+    &__card {
+      width: 100px;
+      height: 120px;
+    }
+    &__border {
+      width: 102px;
+      height: 95px;
+      transform: translate(40px, -20px);
+    }
+    &__image {
+      width: 120px;
+      height: 120px;
+    }
+    &__title {
+      font-size: 14px;
+      width: 130px;
+    }
+    &__date {
+      font-size: 14px;
+      width: 130px;
+    }
+    &__place {
+      font-size: 12px;
     }
   }
 }
