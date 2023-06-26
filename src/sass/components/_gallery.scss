@@ -13,7 +13,7 @@
   }
   &__card {
     width: 267px;
-    height: 300px;
+    height: 370px;
     position: absolute;
     z-index: 2;
   }
@@ -113,4 +113,11 @@
       font-size: 14px;
     }
   }
+}
+.gallery__image:hover {
+  box-shadow: 0 0 4px $color-primary, 0 0 11px $color-primary,
+    0 0 19px $color-primary, 0 0 40px $color-quaternary,
+    0 0 80px $color-quaternary, 0 0 90px $color-quaternary,
+    0 0 100px $color-quaternary, 0 0 150px $color-quaternary;
+  transition: box-shadow 0.3s ease-in-out;
 }

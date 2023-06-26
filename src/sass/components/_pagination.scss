@@ -14,6 +14,13 @@
   cursor: pointer;
   font-family: $montserrat;
 }
+.pagination button:hover {
+  font-size: 18px;
+  color: $color-quaternary;
+  text-shadow: 0 0 7px $color-primary, 0 0 10px $color-primary,
+    0 0 21px $color-primary, 0 0 42px $color-senary, 0 0 82px $color-senary,
+    0 0 92px $color-senary;
+}
 
 .pagination button.active {
   border-radius: 10px 0px;
