@@ -1,26 +1,28 @@
 @import '../utils/variables';
 @import '../utils/mixins';
 
-.test {
+/* .test {
   margin: 0;
   display: flex;
-  flex-basis: calc(100% - 32px/3);
+  flex-basis: calc(100% - 32px / 3);
   @include mobile {
     flex-direction: column;
   }
   @include desktop {
     gap: 30px;
   }
-  @include tablet{
+  @include tablet {
     display: flex;
-    flex-basis: calc(100% - 32px/3);
+    flex-basis: calc(100% - 32px / 3);
     gap: 30px;
   }
-}
+} */
 
 footer {
   color: $color-quinary;
   text-align: center;
   font-size: 16px;
   font-family: $montserrat;
+  margin-top: 65px;
+  margin-bottom: 60px;
 }

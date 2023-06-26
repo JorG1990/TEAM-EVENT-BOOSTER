@@ -1,7 +1,7 @@
 @import '../utils/variables';
 @import '../utils/mixins';
 
-.test2 {
+/* .test2 {
   margin: 0;
   display: flex;
   flex-basis: calc(100% - 32px/3);
@@ -15,8 +15,8 @@
     display: flex;
     flex-basis: calc(100% - 32px/3);
     gap: 30px;
-  }
-}
+  } 
+}*/
 
 .header {
   background-image: url(../images/pic.png);
@@ -25,7 +25,7 @@
   background-size: cover;
   height: 448px;
   &__title {
-    color: $color-tertiary;
+    color: $color-quaternary;
     font-family: $montserrat;
     text-align: center;
     font-weight: 900;
@@ -33,6 +33,8 @@
     margin-top: 0;
     padding-top: 40px;
     font-size: 50;
+    text-shadow: 0 0 5px $color-tertiary, 0 0 15px $color-tertiary,
+      0 0 30px $color-tertiary, 0 0 50px $color-tertiary;
   }
   &__inputs {
     font-family: $montserrat;

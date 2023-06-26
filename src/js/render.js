@@ -7,7 +7,7 @@ import { renderPagination } from './renderPagination';
 const gallery = document.querySelector('.gallery');
 
 // Configuración de paginación
-const pageSize = 28; // Cantidad por página inicial
+const pageSize = 16; // Cantidad por página inicial
 let currentPage = 1;
 let totalPages = 1;
 

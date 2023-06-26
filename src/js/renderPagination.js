@@ -8,7 +8,7 @@ import { renderEvents } from './renderEvents';
 const paginationSection = document.querySelector('.pagination');
 
 // Configuración de paginación
-export const pageSize = 28; // Cantidad por página por pestaña
+export const pageSize = 16; // Cantidad por página por pestaña
 export let currentPage = 1;
 export let totalPages = 1;
 
