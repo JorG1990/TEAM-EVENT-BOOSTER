@@ -6,22 +6,21 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-
+  &__box {
+    margin: 100px 45px;
+  }
   &__card {
     width: 267px;
     height: 300px;
-    //position: absolute;
+    position: absolute;
     z-index: 2;
-    cursor: pointer;
-    margin-left: 53px;
-    margin-bottom: 80px;
   }
   &__border {
     position: relative;
     width: 227px;
     height: 213px;
     border-radius: 50px 0px;
-    border: 1px solid $rgba-color-primary;
+    border: 1px solid rgba(220, 86, 197, 0.3);
     transform: translate(61px, -26px);
     z-index: 1;
   }
@@ -32,23 +31,23 @@
     border-radius: 50px 0px;
   }
   &__title {
-    color: $color-tertiary;
+    color: #dc56c5;
     text-align: center;
     font-size: 16px;
-    font-family: $montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
   }
   &__date {
-    color: $color-primary;
+    color: #fff;
     text-align: center;
     font-size: 16px;
-    font-family: $montserrat;
+    font-family: 'Montserrat', sans-serif;
   }
   &__place {
-    color: $color-primary;
+    color: #fff;
     text-align: center;
     font-size: 14px;
-    font-family: $montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     &::before {
       content: url('../images/Vector.svg');

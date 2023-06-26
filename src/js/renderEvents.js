@@ -80,7 +80,7 @@ export function renderEvents(events) {
     place.textContent = event.place;
 
     const border = document.createElement('div');
-    place.classList.add('gallery__border');
+    border.classList.add('gallery__border');
 
     card.appendChild(image);
     card.appendChild(title);
@@ -88,6 +88,6 @@ export function renderEvents(events) {
     card.appendChild(place);
     cardBox.appendChild(card);
     gallery.appendChild(cardBox);
-    gallery.appendChild(border);
+    cardBox.appendChild(border);
   });
 }
