@@ -12,6 +12,7 @@ function openModalOnCardClick(card) {
   const titleText = card.querySelector('.gallery__title').textContent;
   const dateText = card.querySelector('.gallery__date').textContent;
   const placeText = card.querySelector('.gallery__place').textContent;
+  const infoText = card.querySelector('.gallery__info').textContent; // Nueva línea: Obtener el texto del campo info
 
   // Limpiar el contenido actual del modal
   modalBox.innerHTML = '';
@@ -37,12 +38,17 @@ function openModalOnCardClick(card) {
   modalPlace.classList.add('gallery__modal__place');
   modalPlace.textContent = placeText;
 
+  const modalInfo = document.createElement('p'); // Nueva línea: Crear elemento para mostrar la información
+  modalInfo.classList.add('gallery__modal__info');
+  modalInfo.textContent = infoText; // Nueva línea: Asignar el texto del campo info
+
   // Agregar los elementos al modal
   modalBox.appendChild(cardModal);
   modalBox.appendChild(modalImage);
   cardModal.appendChild(modalTitle);
   cardModal.appendChild(modalDate);
   cardModal.appendChild(modalPlace);
+  cardModal.appendChild(modalInfo); // Nueva línea: Agregar el elemento de información al modal
 }
 
 // Función para renderizar los eventos en el HTML
@@ -79,6 +85,10 @@ export function renderEvents(events) {
     place.classList.add('gallery__place');
     place.textContent = event.place;
 
+    const info = document.createElement('p'); // Nueva línea: Crear elemento para mostrar la información
+    info.classList.add('gallery__info');
+    info.textContent = event.info; // Nueva línea: Asignar el texto del campo info
+
     const border = document.createElement('div');
     border.classList.add('gallery__border');
 
@@ -86,6 +96,7 @@ export function renderEvents(events) {
     card.appendChild(title);
     card.appendChild(date);
     card.appendChild(place);
+    card.appendChild(info); // Nueva línea: Agregar el elemento de información a la tarjeta
     cardBox.appendChild(card);
     gallery.appendChild(cardBox);
     cardBox.appendChild(border);
