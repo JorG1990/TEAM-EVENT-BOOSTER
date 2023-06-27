@@ -26,6 +26,8 @@
   border-radius: 10px 0px;
   border: 1px solid $color-tertiary;
   color: $color-tertiary;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px $color-quaternary, inset 0 0 5px $color-primary;
 }
 @media screen and (max-width: 480px) {
   .pagination button {
