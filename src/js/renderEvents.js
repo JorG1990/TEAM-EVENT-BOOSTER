@@ -11,7 +11,12 @@ function openModalOnCardClick(card) {
   const imageSrc = card.querySelector('.gallery__image').src;
   const titleText = card.querySelector('.gallery__title').textContent;
   const dateText = card.querySelector('.gallery__date').textContent;
+  const timeText = card.querySelector('.gallery__time').textContent;
   const placeText = card.querySelector('.gallery__place').textContent;
+  const localText = card.querySelector('.gallery__local').textContent;
+  const standarText = card.querySelector('.gallery__price').textContent;
+  const vipText = card.querySelector('.gallery__vip').textContent;
+  const buyText = card.querySelector('.gallery__buy').textContent;
   const infoText = card.querySelector('.gallery__info').textContent; // Nueva línea: Obtener el texto del campo info
 
   // Limpiar el contenido actual del modal
@@ -30,13 +35,51 @@ function openModalOnCardClick(card) {
   modalTitle.classList.add('gallery__modal__title');
   modalTitle.textContent = titleText;
 
+  const modalDateTitle = document.createElement('h2');
+  modalDateTitle.classList.add('gallery__modal__title');
+  modalDateTitle.textContent = 'WHEN';
   const modalDate = document.createElement('p');
   modalDate.classList.add('gallery__modal__date');
   modalDate.textContent = dateText;
 
+  const modalTime = document.createElement('p');
+  modalTime.classList.add('gallery__modal__time');
+  modalTime.textContent = timeText;
+
+  const modalPlaceTitle = document.createElement('h2');
+  modalPlaceTitle.classList.add('gallery__modal__title');
+  modalPlaceTitle.textContent = 'WHERE';
+
+  // const modalPlace = document.createElement('p');
+  // modalPlace.classList.add('gallery__modal__place');
+  // modalPlace.textContent = placeText;
   const modalPlace = document.createElement('p');
   modalPlace.classList.add('gallery__modal__place');
   modalPlace.textContent = placeText;
+
+  const modalLocal = document.createElement('p');
+  modalLocal.classList.add('gallery__modal__local');
+  modalLocal.textContent = localText;
+
+  const modalPriceTitle = document.createElement('h2');
+  modalPriceTitle.classList.add('gallery__modal__title');
+  modalPriceTitle.textContent = 'PRICE';
+  const modalPrice = document.createElement('p');
+  modalPrice.classList.add('gallery__modal__price');
+  modalPrice.textContent = standarText;
+
+  const modalBuy = document.createElement('button');
+  modalBuy.classList.add('gallery__modal__buy');
+  modalBuy.textContent = 'BUY TICKETS';
+  modalBuy.onclick = function () {
+    window.location.href = buyText;
+  };
+
+  const modalVIP = document.createElement('p');
+  modalVIP.classList.add('gallery__modal__vip');
+  modalVIP.textContent = vipText;
+
+  const modalBuyVIP = modalBuy.cloneNode(true);
 
   const modalInfo = document.createElement('p'); // Nueva línea: Crear elemento para mostrar la información
   modalInfo.classList.add('gallery__modal__info');
@@ -46,8 +89,29 @@ function openModalOnCardClick(card) {
   modalBox.appendChild(cardModal);
   modalBox.appendChild(modalImage);
   cardModal.appendChild(modalTitle);
+  cardModal.appendChild(modalDateTitle);
   cardModal.appendChild(modalDate);
+  cardModal.appendChild(modalTime);
+  cardModal.appendChild(modalPlaceTitle);
+  cardModal.appendChild(modalLocal);
   cardModal.appendChild(modalPlace);
+  cardModal.appendChild(modalPriceTitle);
+  cardModal.appendChild(modalPrice);
+  cardModal.appendChild(modalBuy);
+  cardModal.appendChild(modalVIP);
+  cardModal.appendChild(modalBuyVIP);
+  if (infoText !== '') {
+    const modalInfoTitle = document.createElement('h2');
+    modalInfoTitle.classList.add('gallery__modal__title');
+    modalInfoTitle.textContent = 'Info';
+    cardModal.appendChild(modalInfoTitle);
+  } else {
+    const modalInfoTitle = document.createElement('h2');
+    modalInfoTitle.classList.add('gallery__modal__title');
+    modalInfoTitle.textContent = '';
+    cardModal.appendChild(modalInfoTitle);
+  }
+  // cardModal.appendChild(modalInfoTitle);
   cardModal.appendChild(modalInfo); // Nueva línea: Agregar el elemento de información al modal
 }
 
@@ -80,10 +144,29 @@ export function renderEvents(events) {
     const date = document.createElement('p');
     date.classList.add('gallery__date');
     date.textContent = event.date;
+    const time = document.createElement('p');
+    time.classList.add('gallery__time');
+    time.textContent = event.dateTimes;
 
     const place = document.createElement('p');
     place.classList.add('gallery__place');
     place.textContent = event.place;
+
+    const placeLocal = document.createElement('p');
+    placeLocal.classList.add('gallery__local');
+    placeLocal.textContent = event.localPlace;
+
+    const prices = document.createElement('p');
+    prices.classList.add('gallery__price');
+    prices.textContent = event.pricesStandar;
+
+    const pricesVIPS = document.createElement('p');
+    pricesVIPS.classList.add('gallery__vip');
+    pricesVIPS.textContent = event.pricesVIP;
+
+    const buyTicket = document.createElement('p');
+    buyTicket.classList.add('gallery__buy');
+    buyTicket.textContent = event.buyTickets;
 
     const info = document.createElement('p'); // Nueva línea: Crear elemento para mostrar la información
     info.classList.add('gallery__info');
@@ -95,7 +178,12 @@ export function renderEvents(events) {
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(date);
+    card.appendChild(time);
     card.appendChild(place);
+    card.appendChild(placeLocal);
+    card.appendChild(prices);
+    card.appendChild(pricesVIPS);
+    card.appendChild(buyTicket);
     card.appendChild(info); // Nueva línea: Agregar el elemento de información a la tarjeta
     cardBox.appendChild(card);
     gallery.appendChild(cardBox);

@@ -43,17 +43,35 @@ export function formatEvents(events) {
     if (event.info) {
       eventInfo = event.info; // Asignar el valor del campo "info" a la variable eventInfo
     }
-    if (event.dates.start.localTime) {
-      dateTimes = event.dates.start.localTime; // Asignar el valor del campo "info" a la variable eventInfo
+    if (event.url) {
+      eventsUrl = event.url; // Asignar el valor del campo "info" a la variable eventInfo
+    }
+    if (event._embedded.venues[0].markets) {
+      localPlaces = event._embedded.venues[0].markets[0].name; // Asignar el valor del campo "info" a la variable eventInfo
+    }
+    if (event.priceRanges) {
+      pricesStandars =
+        event.priceRanges[0].min + ' ' + event.priceRanges[0].currency;
+      pricesVIPS =
+        event.priceRanges[0].max + ' ' + event.priceRanges[0].currency; // Asignar el valor del campo "info" a la variable eventInfo
     }
 
     return {
       name: event.name,
       date: event.dates.start.localDate,
-      dateTime: dateTimes,
+      dateTimes: event.dates.start.localTime + ' ' + event.dates.timezone,
       place: event._embedded.venues[0].name,
       image: imageUrl,
       info: eventInfo, // Agregar el campo "info" al objeto retornado
+      localPlace: localPlaces, // Agregar el campo "info" al objeto retornado
+      pricesStandar: pricesStandars,
+      pricesVIP: pricesVIPS,
+      buyTickets: eventsUrl,
+      //_embedded.events[15].url tickets
+      //_embedded.events[13].products[0].name
+
+      // link mas
+      //https://www.livenation.com/artist/K8vZ91719n0/shania-twain-events
     };
   });
 }
