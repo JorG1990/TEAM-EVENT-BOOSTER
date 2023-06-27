@@ -74,7 +74,6 @@
   width: 250px;
   margin: 10px;
 }
-
 @media screen and (max-width: 480px) {
   .header {
     height: 300px;
@@ -137,4 +136,22 @@
       -0.2rem 0.1rem 1rem $color-tertiary, 0.2rem 0.1rem 1rem $color-tertiary,
       0 -0.5rem 2rem $color-quaternary, 0 0.5rem 3rem $color-quaternary;
   }
+}
+.header__box1 {
+  position: relative;
+}
+.header__image1 {
+  width: 15px;
+  position: absolute;
+  right: 65px;
+  top: 15px;
+}
+.header__box2 {
+  position: relative;
+}
+.header__image2 {
+  width: 15px;
+  position: absolute;
+  right: 65px;
+  top: 15px;
 }
