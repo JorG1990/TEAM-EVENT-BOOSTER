@@ -113,12 +113,14 @@
 }
 .header__inputs-1:focus {
   color: $color-quaternary;
+  fill: $color-quaternary;
 }
 .header__inputs-2:focus {
   color: $color-quaternary;
 }
-.header__inputs-2:hover {
+.header__box2:hover {
   color: $color-quaternary;
+  fill: $color-quaternary;
 }
 @keyframes neonAnimation {
   0% {
@@ -154,4 +156,8 @@
   position: absolute;
   right: 65px;
   top: 15px;
+}
+.header__box1:hover {
+  color: $color-quaternary;
+  fill: $color-quaternary;
 }
