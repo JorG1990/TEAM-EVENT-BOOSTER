@@ -1,5 +1,8 @@
 //index.js -- Importar las variables de configuración desde el archivo "./config"
 import { API_URL, API_KEY } from './js/config';
+import { fetchEventsName } from './js/search';
+const input= document.querySelector(".header__inputs-1");
+
 
 // Petición de eventos
 export function fetchEvents(pageSize, pageNumber) {
@@ -9,7 +12,8 @@ export function fetchEvents(pageSize, pageNumber) {
     includeImages: 'yes',
     size: pageSize,
     page: pageNumber,
-  });
+  }
+  );
 
   return fetch(`https://${API_URL}?${queryParams}`)
     .then(response => response.json())
@@ -47,3 +51,10 @@ export function formatEvents(events) {
     };
   });
 }
+
+
+input.addEventListener('blur',()=>{
+  let searhInput = document.querySelector(".header__inputs-1").value
+  console.log(searhInput)
+  fetchEventsName(searhInput)
+})
