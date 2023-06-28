@@ -58,6 +58,18 @@
       margin-right: 5px;
     }
   }
+  &__lat,
+  &__long,
+  &__price,
+  &__vip,
+  &__buy,
+  &__time,
+  &__local,
+  &__info {
+    display: none;
+    width: 1px;
+    height: 1px;
+  }
 }
 @media screen and (max-width: 480px) {
   .gallery {
