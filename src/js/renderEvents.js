@@ -11,8 +11,8 @@ function openModalOnCardClick(card) {
   const imageSrc = card.querySelector('.gallery__image').src;
   const titleText = card.querySelector('.gallery__title').textContent;
   const dateText = card.querySelector('.gallery__date').textContent;
-  const timeText = card.querySelector('.gallery__time').textContent;
   const placeText = card.querySelector('.gallery__place').textContent;
+  const timeText = card.querySelector('.gallery__time').textContent;
   const localText = card.querySelector('.gallery__local').textContent;
   const standarText = card.querySelector('.gallery__price').textContent;
   const vipText = card.querySelector('.gallery__vip').textContent;
@@ -50,12 +50,21 @@ function openModalOnCardClick(card) {
   modalPlaceTitle.classList.add('gallery__modal__title');
   modalPlaceTitle.textContent = 'WHERE';
 
-  // const modalPlace = document.createElement('p');
-  // modalPlace.classList.add('gallery__modal__place');
-  // modalPlace.textContent = placeText;
+  const latitude = card.querySelector('.gallery__lat').textContent;
+  const longitude = card.querySelector('.gallery__long').textContent;
+
   const modalPlace = document.createElement('p');
   modalPlace.classList.add('gallery__modal__place');
+  modalPlace.classList.add('modalPlace');
   modalPlace.textContent = placeText;
+
+  // Agrega las coordenadas al enlace de Google Maps
+  const googleMapsLink = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+
+  // Abre Google Maps al hacer clic en el párrafo
+  modalPlace.addEventListener('click', () => {
+    window.open(googleMapsLink, '_blank');
+  });
 
   const modalLocal = document.createElement('p');
   modalLocal.classList.add('gallery__modal__local');
@@ -112,7 +121,7 @@ function openModalOnCardClick(card) {
     cardModal.appendChild(modalInfoTitle);
   }
   // cardModal.appendChild(modalInfoTitle);
-  cardModal.appendChild(modalInfo); // Nueva línea: Agregar el elemento de información al modal
+  cardModal.appendChild(modalInfo);
 }
 
 // Función para renderizar los eventos en el HTML
@@ -127,6 +136,8 @@ export function renderEvents(events) {
     const card = document.createElement('div');
     card.classList.add('gallery__card');
     card.setAttribute('data-modal-open', ''); // Agregar atributo para abrir el modal al hacer clic
+
+
 
     // Agregar evento de clic a la tarjeta para abrir el modal
     card.addEventListener('click', () => openModalOnCardClick(card));
@@ -144,17 +155,26 @@ export function renderEvents(events) {
     const date = document.createElement('p');
     date.classList.add('gallery__date');
     date.textContent = event.date;
+
+        const place = document.createElement('p');
+        place.classList.add('gallery__place');
+        place.textContent = event.place;
+
     const time = document.createElement('p');
     time.classList.add('gallery__time');
     time.textContent = event.dateTimes;
 
-    const place = document.createElement('p');
-    place.classList.add('gallery__place');
-    place.textContent = event.place;
-
     const placeLocal = document.createElement('p');
     placeLocal.classList.add('gallery__local');
     placeLocal.textContent = event.localPlace;
+
+    const localLat = document.createElement('p');
+    localLat.classList.add('gallery__lat');
+    localLat.textContent = event.latitude;
+
+    const localLong = document.createElement('p');
+    localLong.classList.add('gallery__long');
+    localLong.textContent = event.longitude;
 
     const prices = document.createElement('p');
     prices.classList.add('gallery__price');
@@ -168,9 +188,9 @@ export function renderEvents(events) {
     buyTicket.classList.add('gallery__buy');
     buyTicket.textContent = event.buyTickets;
 
-    const info = document.createElement('p'); // Nueva línea: Crear elemento para mostrar la información
+    const info = document.createElement('p');
     info.classList.add('gallery__info');
-    info.textContent = event.info; // Nueva línea: Asignar el texto del campo info
+    info.textContent = event.info;
 
     const border = document.createElement('div');
     border.classList.add('gallery__border');
@@ -178,13 +198,15 @@ export function renderEvents(events) {
     card.appendChild(image);
     card.appendChild(title);
     card.appendChild(date);
-    card.appendChild(time);
     card.appendChild(place);
+    card.appendChild(time);
     card.appendChild(placeLocal);
+    card.appendChild(localLat);
+    card.appendChild(localLong);
     card.appendChild(prices);
     card.appendChild(pricesVIPS);
     card.appendChild(buyTicket);
-    card.appendChild(info); // Nueva línea: Agregar el elemento de información a la tarjeta
+    card.appendChild(info);
     cardBox.appendChild(card);
     gallery.appendChild(cardBox);
     cardBox.appendChild(border);

@@ -41,19 +41,24 @@ export function formatEvents(events) {
     }
 
     if (event.info) {
-      eventInfo = event.info; // Asignar el valor del campo "info" a la variable eventInfo
+      eventInfo = event.info;
     }
     if (event.url) {
-      eventsUrl = event.url; // Asignar el valor del campo "info" a la variable eventInfo
+      eventsUrl = event.url;
     }
     if (event._embedded.venues[0].markets) {
-      localPlaces = event._embedded.venues[0].markets[0].name; // Asignar el valor del campo "info" a la variable eventInfo
+      localPlaces = event._embedded.venues[0].markets[0].name;
     }
     if (event.priceRanges) {
       pricesStandars =
         event.priceRanges[0].min + ' ' + event.priceRanges[0].currency;
       pricesVIPS =
-        event.priceRanges[0].max + ' ' + event.priceRanges[0].currency; // Asignar el valor del campo "info" a la variable eventInfo
+        event.priceRanges[0].max + ' ' + event.priceRanges[0].currency;
+    }
+    if (event._embedded.venues[0].location) {
+      locationlat = event._embedded.venues[0].location.latitude;
+
+      locationLong = event._embedded.venues[0].location.longitude;
     }
 
     return {
@@ -62,16 +67,13 @@ export function formatEvents(events) {
       dateTimes: event.dates.start.localTime + ' ' + event.dates.timezone,
       place: event._embedded.venues[0].name,
       image: imageUrl,
-      info: eventInfo, // Agregar el campo "info" al objeto retornado
-      localPlace: localPlaces, // Agregar el campo "info" al objeto retornado
+      info: eventInfo,
+      localPlace: localPlaces,
+      latitude: locationlat,
+      longitude: locationLong,
       pricesStandar: pricesStandars,
       pricesVIP: pricesVIPS,
       buyTickets: eventsUrl,
-      //_embedded.events[15].url tickets
-      //_embedded.events[13].products[0].name
-
-      // link mas
-      //https://www.livenation.com/artist/K8vZ91719n0/shania-twain-events
     };
   });
 }

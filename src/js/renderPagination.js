@@ -53,8 +53,10 @@ export function renderPagination(totalPages, currentPage) {
   }
 
   // Añadir botón para avanzar una página de uno en uno
-  const prevButton = createPaginationButton('<', currentPage - 1);
-  paginationSection.appendChild(prevButton);
+  if (currentPage > 1) {
+    const prevButton = createPaginationButton('<', currentPage - 1);
+    paginationSection.appendChild(prevButton);
+  }
 
   // Añadir botones para avanzar de 10 en 10
   if (startPage > 1) {
@@ -77,6 +79,8 @@ export function renderPagination(totalPages, currentPage) {
   }
 
   // Añadir botón para avanzar una página de uno en uno
-  const nextButton = createPaginationButton('>', currentPage + 1);
-  paginationSection.appendChild(nextButton);
+  if (currentPage < totalPages) {
+    const nextButton = createPaginationButton('>', currentPage + 1);
+    paginationSection.appendChild(nextButton);
+  }
 }
