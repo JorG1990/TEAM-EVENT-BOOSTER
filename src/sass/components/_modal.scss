@@ -81,9 +81,20 @@
     font-family: $montserrat;
     font-weight: 600;
     &::before {
-      content: url('../images/Vector.svg');
+      content: url('../images/location.svg');
       display: inline-block;
       margin-right: 5px;
     }
   }
 }
+.modalPlace:hover {
+  cursor: url('../images/location.svg'), auto;
+  //   width: 20px;
+  //   height: 20px;
+}
+
+.gallery__modal__price::before, .gallery__modal__vip::before {
+      content: url('../images/code.svg');
+      display: inline-block;
+      margin-right: 5px;
+    }
