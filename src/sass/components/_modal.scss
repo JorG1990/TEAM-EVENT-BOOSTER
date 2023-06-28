@@ -93,8 +93,9 @@
   //   height: 20px;
 }
 
-.gallery__modal__price::before, .gallery__modal__vip::before {
-      content: url('../images/code.svg');
-      display: inline-block;
-      margin-right: 5px;
-    }
+.gallery__modal__price::before,
+.gallery__modal__vip::before {
+  content: url('../images/code.svg');
+  display: inline-block;
+  margin-right: 5px;
+}
