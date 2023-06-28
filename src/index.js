@@ -2,26 +2,25 @@
 import { API_URL, API_KEY } from './js/config';
 
 // Petición de eventos
-export function fetchEvents(pageSize, pageNumber) {
+export async function fetchEvents(pageSize, pageNumber) {
   const queryParams = new URLSearchParams({
     apikey: API_KEY,
-    locale: '*',
-    includeImages: 'yes',
+    // locale: '*',
+    // includeImages: 'yes',
     size: pageSize,
     page: pageNumber,
   });
 
-  return fetch(`https://${API_URL}?${queryParams}`)
-    .then(response => response.json())
-    .then(data => {
-      const events = formatEvents(data._embedded.events); // Formatear los eventos
-      const totalPages = Math.ceil(data.page.totalElements / pageSize);
-      return { events, totalPages };
-    })
-    .catch(error => {
-      console.log(error);
-      throw new Error('Error al obtener los eventos');
-    });
+  try {
+    const response = await fetch(`https://${API_URL}?${queryParams}`);
+    const data = await response.json();
+    const events = formatEvents(data._embedded.events); // Formatear los eventos
+    const totalPages = Math.ceil(data.page.totalElements / pageSize);
+    return { events, totalPages };
+  } catch (error) {
+    console.log(error);
+    throw new Error('Error al obtener los eventos');
+  }
 }
 
 // Función para formatear los eventos y extraer la información necesaria
@@ -77,3 +76,13 @@ export function formatEvents(events) {
     };
   });
 }
+
+
+import { fetchEventsName, events} from './js/search';
+const input= document.querySelector(".header__inputs-1");
+
+input.addEventListener('blur',()=>{
+  let searhInput = document.querySelector(".header__inputs-1").value 
+  console.log(searhInput)
+  fetchEventsName(searhInput)
+})
