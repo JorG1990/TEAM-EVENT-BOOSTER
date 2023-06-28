@@ -16,6 +16,7 @@
     height: 370px;
     position: absolute;
     z-index: 2;
+    transition: transform 0.5s linear;
   }
   &__border {
     position: relative;
@@ -117,7 +118,8 @@
 .gallery__image:hover {
   box-shadow: 0 0 4px $color-primary, 0 0 11px $color-primary,
     0 0 19px $color-primary, 0 0 40px $color-quaternary,
-    0 0 80px $color-quaternary, 0 0 90px $color-quaternary,
-    0 0 100px $color-quaternary, 0 0 150px $color-quaternary;
-  transition: box-shadow 0.3s ease-in-out;
+    0 0 80px $color-quaternary, 0 0 90px $color-quaternary;
+}
+.gallery__card:hover {
+  transform: scale(1.1);
 }

@@ -3,4 +3,34 @@
 @import '../utils/mixins';
 body {
   background-color: $color-secondary;
+  max-width: 1200px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.header,
+.gallery,
+.footer {
+  animation: fadeIn 1s forwards;
+  opacity: 0;
+}
+
+.header {
+  animation-delay: 0.5s;
+}
+
+.gallery {
+  animation-delay: 1s;
+}
+
+.footer {
+  animation-delay: 1.5s;
 }
